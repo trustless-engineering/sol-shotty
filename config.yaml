@@ -1,0 +1,3 @@
+endpoints:
+  - https://api.mainnet-beta.solana.com
+use_cluster_nodes: false
