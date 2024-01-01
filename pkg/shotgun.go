@@ -15,14 +15,15 @@ type SuccessResponse struct {
 }
 
 func Shotgun(endpoints []string, mainRequest *http.Request) (SuccessResponse, error) {
-	successCh := make(chan SuccessResponse, 1) // Make successCh buffered with capacity 1
+	successCh := make(chan SuccessResponse)
+
+	defer close(successCh)
 
 	for _, endpoint := range endpoints {
 		go makeRequest(endpoint, mainRequest, successCh)
 	}
 
-	successValue := <-successCh
-	return successValue, nil
+	return <-successCh, nil
 }
 
 func makeRequest(endpoint string, req *http.Request, successCh chan SuccessResponse) {
@@ -39,7 +40,9 @@ func makeRequest(endpoint string, req *http.Request, successCh chan SuccessRespo
 	}
 
 	// Send request
-	client := &http.Client{}
+	client := &http.Client{
+		Timeout: 30 * time.Second, //TODO: Make this configurable
+	}
 
 	startTime := time.Now()
 	resp, err := client.Do(newReq)

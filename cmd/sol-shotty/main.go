@@ -47,6 +47,8 @@ func proxy(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
+	defer response.Result.Body.Close()
+
 	fmt.Printf("Successful response from %s in %dms\n", response.Endpoint, response.RTT)
 }
 
