@@ -27,7 +27,12 @@ SOL Shotty will be listening on `http://127.0.0.1:420`.
 
 ## Run From Source
 
-Make sure you have `golang` installed and then run `go run ./cmd/sol-shotty`
+Make sure you have `golang` installed and then run:
+
+```bash
+go mod download
+go run ./cmd/sol-shotty
+```
 
 sol-shotty will now be listening on `http://127.0.0.1:420` and can be used anywhere an RPC URL is accepted.
 
