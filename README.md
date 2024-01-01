@@ -14,9 +14,18 @@ All RPC providers have bad days, sol-shotty helps get faster responses when a si
 
 # Quick Start
 
-Edit the `config.yaml` file to include the endpoints you wish to use. Some providers use Cloudflare to provide anycast routing when they only have infrastructure in a few locations.
+Download the most recent release from the [releases](https://github.com/trustless-engineering/sol-shotty/releases) page.
 
-A lot of providers allow you to sign up with just a web3 wallet, if you have multiple you might be able to sign up multiple times. 
+Decompress the archive and edit the `config.yaml` file to include the endpoints you wish to use. 
+You can add as many as you want, including multiple from the same provider.
+
+A lot of providers allow you to sign up with just a web3 wallet, if you have multiple you might be able to sign up multiple times.
+
+After modifying the config run `./sol-shotty` (or `sol-shotty.exe` if on Windows).
+
+SOL Shotty will be listening on `http://127.0.0.1:420`. 
+
+## Run From Source
 
 Make sure you have `golang` installed and then run `go run ./cmd/sol-shotty`
 
