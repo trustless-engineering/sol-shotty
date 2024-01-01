@@ -55,6 +55,6 @@ func proxy(w http.ResponseWriter, req *http.Request) {
 func main() {
 	fmt.Printf("Loading the shotty...\n")
 	http.HandleFunc("/", proxy)
-
+	fmt.Printf("Shotty is ready to fire! Listening at http://127.0.0.1:420\n")
 	http.ListenAndServe(":420", nil)
 }
