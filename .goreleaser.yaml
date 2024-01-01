@@ -39,7 +39,8 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
-    files: [ 'LICENSE*', 'README*', 'CHANGELOG', 'license*', 'readme*', 'changelog', 'config.yaml']
+    files: 
+      - 'config.yaml'
 
 changelog:
   sort: asc
