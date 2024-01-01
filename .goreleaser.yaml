@@ -23,6 +23,7 @@ builds:
       - linux
       - windows
       - darwin
+      
 
 archives:
   - format: tar.gz
@@ -38,6 +39,7 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
+    files: [ 'LICENSE*', 'README*', 'CHANGELOG', 'license*', 'readme*', 'changelog', 'config.yaml']
 
 changelog:
   sort: asc
